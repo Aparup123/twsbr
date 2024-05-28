@@ -19,10 +19,10 @@ class Motor:
         self.pwm_motor.start(0) # Duty cycle in percentage
 
     def stop(self):
-        while self.speed > 10:
-            self.pwm_motor.ChangeDutyCycle(self.speed)
-            self.speed -= 10
-            time.sleep(0.1)
+        #while self.speed > 10:
+        #    self.pwm_motor.ChangeDutyCycle(self.speed)
+        #    self.speed -= 10
+        #    time.sleep(0.1)
         GPIO.output(self.in1, GPIO.LOW)
         GPIO.output(self.in2, GPIO.LOW)
     

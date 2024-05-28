@@ -20,9 +20,16 @@ while True:
     prev_angle=current_angle
     print("Current Angle:",current_angle)
     if(current_angle>2):
-        motorSpeed=current_angular_vel_x
-        
-        m.forward(
+        motorSpeed=(current_angle*10)
+        motorSpeed=motorSpeed if motorSpeed<=100 else 100
+        m.backward(motorSpeed)
+    elif(current_angle<(-2)):
+        motorSpeed=(-current_angle*10)
+        motorSpeed=motorSpeed if motorSpeed<=100 else 100
+        m.forward(motorSpeed)
+    else:
+        m.stop()
+
     # print(gyroData)
     # print(current_angular_vel_x)
     
